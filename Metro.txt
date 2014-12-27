@@ -1,0 +1,140 @@
+size = 68
+0 = Acadie
+1 = Angrignon
+2 = Assomption
+3 = Atwater
+4 = Beaubien
+5 = Beaudry
+6 = Berri-UQAM
+7 = Bonaventure
+8 = Cadillac
+9 = Cartier
+10 = Champ-de-Mars
+11 = Charlevoix
+12 = Côte-des-Neiges
+13 = Côte-Sainte-Catherine
+14 = Côte-Vertu
+15 = Crémazie
+16 = D'Iberville
+17 = De Castelnau
+18 = De L'Église
+19 = De La Concorde
+20 = De La Savane
+21 = Du Collège
+22 = Édouard-Montpetit
+23 = Fabre
+24 = Frontenac
+25 = Georges-Vanier
+26 = Guy-Concordia
+27 = Henri-Bourassa
+28 = Honoré-Beaugrand
+29 = Jarry
+30 = Jean-Drapeau
+31 = Jean-Talon
+32 = Jolicoeur
+33 = Joliette
+34 = Langelier
+35 = LaSalle
+36 = Laurier
+37 = Lionel-Groulx
+38 = Longueuil–Université-de-Sherbrooke
+39 = Lucien-L'Allier
+40 = McGill
+41 = Monk
+42 = Mont-Royal
+43 = Montmorency
+44 = Namur
+45 = Outremont
+46 = Papineau
+47 = Parc
+48 = Peel
+49 = Pie-IX
+50 = Place-d'Armes
+51 = Place-des-Arts
+52 = Place-Saint-Henri
+53 = Plamondon
+54 = Préfontaine
+55 = Radisson
+56 = Rosemont
+57 = Saint-Laurent
+58 = Saint-Michel
+59 = Sauvé
+60 = Sherbrooke
+61 = Snowdon
+62 = Square-Victoria-OACI
+63 = Université-de-Montréal
+64 = Vendôme
+65 = Verdun
+66 = Viau
+67 = Villa-Maria
+;
+(0,47,727.60)
+(1,41,844.29)
+(2,8,781.69)
+(3,26,681.54)
+(4,31,712.10)
+(5,46,495.00)
+(6,5,378.76)
+(6,30,2362.10)
+(6,60,579.10)
+(7,62,392.60)
+(8,34,518.51)
+(9,19,2073.60)
+(10,6,720.50)
+(11,37,1077.31)
+(15,59,1279.60)
+(12,63,764.60)
+(13,61,693.00)
+(14,21,777.24)
+(16,58,607.60)
+(17,31,471.60)
+(18,35,812.30)
+(19,43,847.60)
+(20,44,786.70)
+(21,20,1281.69)
+(23,16,644.50)
+(24,54,1003.95)
+(25,39,530.60)
+(26,48,593.14)
+(27,9,1101.60)
+(29,15,825.60)
+(30,38,1572.10)
+(31,23,839.60)
+(31,29,977.10)
+(32,65,761.39)
+(33,49,766.88)
+(34,55,621.79)
+(35,11,707.25)
+(36,56,746.10)
+(37,3,1387.74)
+(37,25,758.60)
+(39,7,381.60)
+(40,51,345.69)
+(41,32,1062.85)
+(42,36,499.60)
+(44,53,988.47)
+(45,0,728.60)
+(46,24,1157.57)
+(47,17,490.60)
+(48,40,296.52)
+(49,66,621.85)
+(50,10,370.60)
+(51,57,354.38)
+(52,37,579.60)
+(53,13,451.10)
+(54,33,383.43)
+(55,28,716.99)
+(56,4,541.10)
+(57,6,336.80)
+(59,27,771.60)
+(60,42,932.10)
+(61,12,959.60)
+(61,67,884.41)
+(62,50,356.60)
+(63,22,667.60)
+(64,52,1450.88)
+(65,18,563.86)
+(66,2,895.87)
+(67,64,1407.32)
+(22,45,1090.60)
+;
