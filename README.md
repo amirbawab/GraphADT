@@ -11,7 +11,9 @@ GraphADT (Adjacency list)
 | addVertex(data)  | Vertex added | Add a vertix to the graph | O(1) |
 | areAdjacent(v1,v2)  | Boolean | Checks if two vertices are adjacent | O(min(v1 deg, v2 deg)) |
 | BFS()  | Array of vertices traversed by BFS | Traverse the graph with Breadth First Search | O(\|V\| + \|E\|) |
+| BFS(vertex)  | Array of vertices traversed by BFS | Traverse reachable vertices in a graph with Breadth First Search starting from a specific vertex | O(\|V\| + \|E\|) |
 | DFS()  | Array of vertices traversed by DFS | Traverse the graph with Depth First Search | O(\|V\| + \|E\|) |
+| DFS(vertex)  | Array of vertices traversed by DFS | Traverse reachable vertices in a graph with Depth First Search starting from a specific vertex | O(\|V\| + \|E\|) |
 | connectedComponents()  | Number of connected components | Checks how many connected components the graph contains | O(\|V\| + \|E\|) |
 | isConnected()  | Boolean | Checks if the graph is connected | O(\|V\| + \|E\|) |
 | isCyclic()  | Boolean | Checks if the graph is cyclic | O(\|V\| + \|E\|) |
