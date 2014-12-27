@@ -155,6 +155,68 @@ public class Graph <E> {
 	}
 	
 	/**
+	 * Breadth-First-Search starting from a specific vertex
+	 * @return Array of vertices traversed by BFS
+	 */
+	public Vertex<E>[] BFS(Vertex<E> vertex){
+		
+		// Mark all vertices as unvisited
+		NodeIterator<Vertex<E>> iterV = vertices();
+		while(iterV.hasNext())
+			iterV.next().setStatus(Vertex.UNVISITED);
+		
+		// Mark all edges as undiscovered
+		NodeIterator<Edge<E>> iterE = edges();
+		while(iterE.hasNext())
+			iterE.next().setStatus(Edge.UNDISCOVERED);
+		
+		// Create the list to store the vertices
+		DoublyLinkedList<Vertex<E>> BFS_list = new DoublyLinkedList<>();
+		
+		// Add the starting vertex and mark it as visiting
+		Queue<Vertex<E>> q = new LinkedList<Vertex<E>>();
+		q.add(vertex);
+		vertex.setStatus(Vertex.VISITING);
+		while(!q.isEmpty()){
+			
+			// Remove a vertex from the queue and mark it as visited
+			Vertex<E> polled = q.poll();
+			BFS_list.add(polled);
+			polled.setStatus(Vertex.VISITED);
+			
+			// Iterator on all neighbors of the removed vertex and add them to the queue
+			NodeIterator<Edge<E>> incidentEdges = polled.getOutEdges();
+			while(incidentEdges.hasNext()){
+				Edge<E> edge = incidentEdges.next();
+				Vertex<E> oppositeVertex = edge.getV2();
+				
+				// If neighbor is not already visited, put it in the queue
+				if(oppositeVertex.getStatus() == Vertex.UNVISITED){
+					
+					// Mark edge between the removed vertex and the current neighbor as discovered
+					edge.setStatus(Edge.DISCOVERED);
+					oppositeVertex.setStatus(Vertex.VISITING);
+					q.offer(oppositeVertex);
+				
+				// If neighbor has already been visited, don't put it in the queue
+				}else{
+					
+					// Mark edge as cross if undiscovered
+					if(edge.getStatus() == Edge.UNDISCOVERED)
+						edge.setStatus(Edge.CROSS);
+				}
+			}
+		}
+		
+		NodeIterator<Vertex<E>> BFS_iter = BFS_list.iterator();
+		Vertex<E> BFS[] = new Vertex[BFS_iter.size()];
+		int index = 0;
+		while(BFS_iter.hasNext())
+			BFS[index++] = BFS_iter.next();
+		return BFS;
+	}
+	
+	/**
 	 * Breadth-First-Search
 	 * @return Array of vertices traversed by BFS
 	 */
@@ -298,6 +360,73 @@ public class Graph <E> {
 		
 		// Mark vertex as visited if more neighbors needs to be visited
 		v.setStatus(Vertex.VISITED);
+	}
+	
+	/**
+	 * Depth-First-Search from a specific vertex
+	 * @return Array of vertices traversed by DFS
+	 */
+	public Vertex<E>[] DFS(Vertex<E> vertex){
+		
+		// Mark all vertices as unvisited and uncolored
+		NodeIterator<Vertex<E>> iterV = vertices();
+		while(iterV.hasNext()){
+			Vertex<E> currentV = iterV.next();
+			currentV.setStatus(Vertex.UNVISITED);
+			currentV.setColor(Vertex.UNCOLORED);
+		}
+		
+		// Mark all edges as undiscovered
+		NodeIterator<Edge<E>> iterE = edges();
+		while(iterE.hasNext())
+			iterE.next().setStatus(Edge.UNDISCOVERED);
+		
+		// Create the list to store the vertices
+		DoublyLinkedList<Vertex<E>> DFS_list = new DoublyLinkedList<>();
+		
+		// Populate the list
+		DFS(vertex, DFS_list);
+		
+		// Create the return array
+		NodeIterator<Vertex<E>> iter_DFS = DFS_list.iterator();
+		Vertex<E> DFS[] = new Vertex[iter_DFS.size()];
+		int index = 0;
+		while(iter_DFS.hasNext())
+			DFS[index++] = iter_DFS.next();
+		
+		return DFS;
+	}
+	
+	/**
+	 * Recursive DFS that generates the content of DFS_list
+	 * @param vertex
+	 * @param DFS_list
+	 */
+	private void DFS(Vertex<E> vertex, DoublyLinkedList<Vertex<E>> DFS_list){
+		vertex.setStatus(Vertex.VISITING);
+		DFS_list.add(vertex);
+		
+		// Iterate on all neighbors of the current vertex
+		NodeIterator<Edge<E>> incidentEdges = vertex.getOutEdges();
+		while(incidentEdges.hasNext()){
+			Edge<E> edge = incidentEdges.next();
+			Vertex<E> oppositeVertex = edge.getV2();
+			
+			// Recur on neighbor if not visited
+			if(oppositeVertex.getStatus() == Vertex.UNVISITED){
+				edge.setStatus(Edge.DISCOVERED);
+				oppositeVertex.setStatus(Vertex.VISITING);
+				DFS(oppositeVertex, DFS_list);
+			}else{
+				
+				/// Mark edge as cross if the undiscovered
+				if(edge.getStatus() == Edge.UNDISCOVERED)
+					edge.setStatus(Edge.CROSS);
+			}
+		}
+		
+		// Mark vertex as visited if more neighbors needs to be visited
+		vertex.setStatus(Vertex.VISITED);
 	}
 	
 	/**
