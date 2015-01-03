@@ -665,8 +665,10 @@ public class Graph <E,T> {
 			graph.addEdge(v1, v2, currentE.getLabel(), currentE.getWeight());
 		}
 		
-		// Adjust the directed/undirected graph option
+		// Adjust the directed/undirected graph option and unique id counter
 		graph.directed = directed;
+		graph.unique_id = unique_id;
+		
 		return graph;
 	}
 
