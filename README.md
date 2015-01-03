@@ -1,4 +1,4 @@
-GraphADT (Adjacency list)
+GraphADT 2.0 (Adjacency list)
 ========
 
 ####Methods to build your graph<br>
