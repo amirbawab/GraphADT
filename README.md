@@ -1,6 +1,12 @@
 GraphADT 2.0 (Adjacency list)
 ========
 
+####What's New:
+- Bug in cloning fixed
+- Structure modified
+- Only useful methods are accessible for each class
+- Edges now support a label of any type
+
 ####Methods to build your graph<br>
 
 #####Graph methods and complexities:
