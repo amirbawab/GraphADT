@@ -131,10 +131,10 @@ Without `WEIGHT` & `LABEL`:     `(FROM, TO)`
 #####B) Use methods:
 
     public static void main(String[] args) {
-		Graph<String> graph = new Graph<String>(false); // Undirected graph
-		Vertex<String> v1 = graph.addVertex("A");
-		Vertex<String> v2 = graph.addVertex("B");
-		Edge<String> e1[] = graph.addEdge(v1, v2);
+		Graph<String,String> graph = new Graph<String,String>(false); // Undirected graph
+		Vertex<String,String> v1 = graph.addVertex("A");
+		Vertex<String,String> v2 = graph.addVertex("B");
+		Edge<String,String> e1[] = graph.addEdge(v1, v2);
 		System.out.println(graph);
 	}
 	
@@ -147,7 +147,9 @@ Without `WEIGHT` & `LABEL`:     `(FROM, TO)`
     (<A>, <B>)
     (<B>, <A>)
     
-This method (B) is more dynamic compared to the first method (A) because it allows you to choose any generic type for your graph. For instance, you can create a class `Person` and build a graph of generic type `Person` so that every edge between two persons is a relationship and the edge weight is the type of this relationship.
+*Note:* 
+- `Graph <E,T>`. `E` is the vertex generic type. `T` is the edge generic type.
+- This method (B) is more dynamic compared to the first method (A) because it allows you to choose any generic type for your graph vertices data and edges label. For instance, you can create a class `Person` and build a graph with vertices data of type `Person` and edges label of type `Integer`, so that every edge between two persons is a relationship and the edge label is the type of this relationship (1: friends, 2: family,  etc... ).
 
 ###Example of a project using the GraphADT: Montreal metro
 
@@ -158,9 +160,9 @@ This method (B) is more dynamic compared to the first method (A) because it allo
 ######Code:
 
     try {
-			Graph<String> graph = Graph.inParser("Metro.txt", false);
-			Vertex<String> v[] = graph.vertices_array();
-			for(Edge<String> e : graph.dijkstra(v[14], v[30]))
+			Graph<String,String> graph = Graph.inParser("Metro.txt", false);
+			Vertex<String,String> v[] = graph.vertices_array();
+			for(Edge<String,String> e : graph.dijkstra(v[14], v[30]))
 				System.out.println(e);
 			System.out.println("-------------------------------");
 			System.out.println(String.format("Total distance: %.2f meters", v[30].getDijkstra_value()));
