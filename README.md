@@ -130,13 +130,15 @@ Without `WEIGHT` & `LABEL`:     `(FROM, TO)`
     
 #####B) Use methods:
 
-    public static void main(String[] args) {
-		Graph<String,String> graph = new Graph<String,String>(false); // Undirected graph
-		Vertex<String,String> v1 = graph.addVertex("A");
-		Vertex<String,String> v2 = graph.addVertex("B");
-		Edge<String,String> e1[] = graph.addEdge(v1, v2);
-		System.out.println(graph);
-	}
+```java
+public static void main(String[] args) {
+	Graph<String,String> graph = new Graph<String,String>(false); // Undirected graph
+	Vertex<String,String> v1 = graph.addVertex("A");
+	Vertex<String,String> v2 = graph.addVertex("B");
+	Edge<String,String> e1[] = graph.addEdge(v1, v2);
+	System.out.println(graph);
+}
+```
 	
 **Output of the above code:**
 
@@ -158,18 +160,18 @@ Without `WEIGHT` & `LABEL`:     `(FROM, TO)`
 #####Write a program to find the shortest path from Côte-Vertu to Jean-Drapeau
 
 ######Code:
-
-    try {
-			Graph<String,String> graph = Graph.inParser("Metro.txt", false);
-			Vertex<String,String> v[] = graph.vertices_array();
-			for(Edge<String,String> e : graph.dijkstra(v[14], v[30]))
-				System.out.println(e);
-			System.out.println("-------------------------------");
-			System.out.println(String.format("Total distance: %.2f meters", v[30].getDijkstra_value()));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
+```java
+try {
+	Graph<String,String> graph = Graph.inParser("Metro.txt", false);
+	Vertex<String,String> v[] = graph.vertices_array();
+	for(Edge<String,String> e : graph.dijkstra(v[14], v[30]))
+		System.out.println(e);
+	System.out.println("-------------------------------");
+	System.out.println(String.format("Total distance: %.2f meters", v[30].getDijkstra_value()));
+} catch (FileNotFoundException e) {
+	e.printStackTrace();
+}
+```
 #####Output:
     
     (<Côte-Vertu>, <Du Collège>)
