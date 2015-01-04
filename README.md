@@ -7,7 +7,7 @@ GraphADT 2.0 (Adjacency list)
 - Only useful methods are accessible for each class
 - Edges now support a label of any type
 
-<img src="https://raw.githubusercontent.com/amirbawab/GraphADT/master/GraphADT.jpg">
+<img src="https://raw.githubusercontent.com/amirbawab/GraphADT/master/documentation/GraphADT.jpg">
 
 ####Methods to build your graph<br>
 
