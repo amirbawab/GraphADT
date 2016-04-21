@@ -1,4 +1,4 @@
-GraphADT 2.0 (Adjacency list)
+GraphADT 2.0
 ========
 
 ####What's New:
